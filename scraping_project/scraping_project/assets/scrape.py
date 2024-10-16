@@ -70,12 +70,12 @@ def scrape() -> List:
     company_details = []
 
     print("Extracting sections")
-    for element in soup.find_all('a', class_="_company_86jzd_338"):
+    for idx, element in enumerate(soup.find_all('a', class_="_company_86jzd_338")):
         title = element.find('span', class_="_coName_86jzd_453").text  # Get company name
         description = element.find('span', class_="_coDescription_86jzd_478").text  # Get company description
         location = element.find('span', class_="_coLocation_86jzd_469").text  # Get company location
         tags = ",".join([tag.text for tag in element.find_all('span', class_="pill _pill_86jzd_33")])  # Get tags
-        company_details.append([title, description, location, tags])
+        company_details.append([1000 + idx, title, description, location, tags])
 
     return company_details
 

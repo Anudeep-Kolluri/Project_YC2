@@ -17,6 +17,6 @@ def save2db(ddb: DuckDBResource, scraped_data: List):
     print("executing query to insert values")
     with ddb.get_connection() as conn:
         for row in scraped_data:
-            conn.execute("INSERT INTO companies VALUES (?, ?, ?, ?)", row)
+            conn.execute("INSERT INTO companies VALUES (?, ?, ?, ?, ?)", row)
     
     print("finished query execution")

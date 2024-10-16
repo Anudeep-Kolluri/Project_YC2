@@ -1,0 +1,7 @@
+sources:
+  - name: dagster
+    tables:
+      - name: upstream
+        meta:
+          dagster:
+            asset_key: ["ingest"]

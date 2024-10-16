@@ -28,6 +28,7 @@ def check_db(ddb: DuckDBResource, scraped_data: List) -> List:
     if ('companies',) not in results:
         table_query = """
              create table companies (
+                Id int,
                 Name varchar,
                 Description varchar,
                 Location varchar,
